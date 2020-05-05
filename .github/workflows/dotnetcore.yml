@@ -26,7 +26,7 @@ jobs:
     - name: ssh deploy
       uses: easingthemes/ssh-deploy@v2.1.2
       with:
-        SSH_PRIVATE_KEY: ${{secrets.sshPrivateKey}}
-        REMOTE_HOST: ${{secrets.remoteHost}}
-        REMOTE_USER: ${{secrets.remoteUser}}
-        TARGET: ${{secrets.target}}
+        SSH_PRIVATE_KEY: ${{  secrets.sshPrivateKey  }}
+        REMOTE_HOST: ${{  secrets.remoteHost  }}
+        REMOTE_USER: ${{  secrets.remoteUser  }}
+        TARGET: ${{  secrets.target  }}
