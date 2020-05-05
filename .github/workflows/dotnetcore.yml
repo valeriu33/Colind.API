@@ -23,10 +23,9 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - name: ssh deploy
-      uses: easingthemes/ssh-deploy@v2.1.2
-      with:
-        SSH_PRIVATE_KEY: ${{  secrets.sshPrivateKey  }}
-        REMOTE_HOST: ${{  secrets.remoteHost  }}
-        REMOTE_USER: ${{  secrets.remoteUser  }}
-        TARGET: ${{  secrets.target  }}
+    - name: Deploy to Staging 
+      uses: contention/rsync-deployments@v1.0.0
+      env: 
+        DEPLOY_KEY: ${{secrets.sshPrivateKey}} 
+      with: 
+        args: "-avzr --delete --exclude .htaccess --exclude /uploads/ ${{secrets.remoteUser}}@${{secrets.remoteHost}}:/srv/myapp/public/htdocs/"
