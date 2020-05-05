@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colind.API", "Colind.API\Colind.API.csproj", "{B03E869E-0D09-4637-BA74-869AF362B887}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colind.API.Tests", "Colind.API.Tests\Colind.API.Tests.csproj", "{1F2A85D6-ED7D-4F52-A1F9-CD5B3EC897EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{B03E869E-0D09-4637-BA74-869AF362B887}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B03E869E-0D09-4637-BA74-869AF362B887}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B03E869E-0D09-4637-BA74-869AF362B887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F2A85D6-ED7D-4F52-A1F9-CD5B3EC897EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F2A85D6-ED7D-4F52-A1F9-CD5B3EC897EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F2A85D6-ED7D-4F52-A1F9-CD5B3EC897EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F2A85D6-ED7D-4F52-A1F9-CD5B3EC897EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
