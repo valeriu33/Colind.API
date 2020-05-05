@@ -27,7 +27,7 @@ jobs:
       uses: wlixcc/SFTP-Deploy-Action@v1.0
       with:
         # username
-        username: ${{ secterts.remoteUser }}
+        username: ${{ secrets.remoteUser }}
         server: ${{ secrets.repoteHost }}
         ssh_private_key: ${{ secrets.sshPrivateKey }}
         remote_path: ${{ secrets.target }}
