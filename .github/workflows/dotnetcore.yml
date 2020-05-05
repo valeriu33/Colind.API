@@ -23,9 +23,12 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - name: Deploy to Staging 
-      uses: onclesam/rsync-deployments@patch-1
-      env: 
-        DEPLOY_KEY: ${{secrets.sshPrivateKey}} 
-      with: 
-        args: "-avzr --delete --exclude .htaccess --exclude /uploads/ ${{secrets.remoteUser}}@${{secrets.remoteHost}}:/srv/myapp/public/htdocs/"
+    - name: SFTP Deploy
+      uses: wlixcc/SFTP-Deploy-Action@v1.0
+      with:
+        # username
+        username: ${{ secterts.remoteUser }}
+        server: ${{ secrets.repoteHost }}
+        ssh_private_key: ${{ secrets.sshPrivateKey }}
+        remote_path: ${{ secrets.target }}
+        args: -o ConnectTimeout=5
