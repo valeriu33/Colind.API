@@ -24,7 +24,7 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Deploy to Staging 
-      uses: contention/rsync-deployments@v1.0.0
+      uses: onclesam/rsync-deployments@patch-1
       env: 
         DEPLOY_KEY: ${{secrets.sshPrivateKey}} 
       with: 
