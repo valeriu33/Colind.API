@@ -28,7 +28,7 @@ jobs:
       with:
         # username
         username: ${{ secrets.remoteUser }}
-        server: ${{ secrets.repoteHost }}
+        server: ${{ secrets.remoteHost }}
         ssh_private_key: ${{ secrets.sshPrivateKey }}
         remote_path: ${{ secrets.target }}
         args: -o ConnectTimeout=5
