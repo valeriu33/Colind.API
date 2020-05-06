@@ -25,6 +25,13 @@ jobs:
       run: dotnet test --no-restore --verbosity normal
     - name: SFTP Deploy
       uses: wlixcc/SFTP-Deploy-Action@v1.0
+    - name: Replace Action
+        uses: datamonsters/replace-action@v2
+        with:
+        # Files, comma-separated. Supposed PLACEHOLDER in them
+        files: 'Colind.API/appsettings.json'
+        # Comma-separated pairs PLACEHOLDER=value
+        replacements: '"DockerConnection": ""="DockerConnection": ${{secrets.connectionString}}'
       with:
         # username
         username: ${{ secrets.remoteUser }}
