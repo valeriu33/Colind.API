@@ -32,7 +32,7 @@ jobs:
         # The string we want to replace
         find: '\"DockerConnection\": \"\"'
         # The new string to replace with
-        replace: '\"\"=\"DockerConnection\": \${{secrets.connectionString}}'
+        replace: '\"\"=\"DockerConnection\": \"${{secrets.connectionString}}\"'
     - name: SFTP Deploy
       uses: wlixcc/SFTP-Deploy-Action@v1.0
       with:
