@@ -30,7 +30,7 @@ jobs:
         # Files, comma-separated. Supposed PLACEHOLDER in them
         files: 'Colind.API/appsettings.json'
         # Comma-separated pairs PLACEHOLDER=value
-        replacements: '"DockerConnection": ""="DockerConnection": ${{secrets.connectionString}}'
+        replacements: '\"DockerConnection\": \"\"=\"DockerConnection\": ${{secrets.connectionString}}'
         
     - name: SFTP Deploy
       uses: wlixcc/SFTP-Deploy-Action@v1.0
