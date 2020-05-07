@@ -23,15 +23,16 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-      
-    - name: Replace Action
-      uses: datamonsters/replace-action@v2
+    - name: String Replace
+      uses: shitiomatic/str-replace@v1.0.2
       with:
-        # Files, comma-separated. Supposed PLACEHOLDER in them
-        files: 'Colind.API/appsettings.json'
-        # Comma-separated pairs PLACEHOLDER=value
-        replacements: '\"DockerConnection\": \"\"=\"DockerConnection\": ${{secrets.connectionString}}'
-        
+        # A regular expression of files to include in our find and replace
+        include: appsettings.json
+        # A regular expression of files to exclude in our find and replace
+        # The string we want to replace
+        find: '\"DockerConnection\": \"\"'
+        # The new string to replace with
+        replace: '\"\"=\"DockerConnection\": \${{secrets.connectionString}}'
     - name: SFTP Deploy
       uses: wlixcc/SFTP-Deploy-Action@v1.0
       with:
