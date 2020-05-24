@@ -43,3 +43,10 @@ jobs:
         local_path: './Colind.API/bin/'
         remote_path: ${{ secrets.target }}
         args: -o ConnectTimeout=5
+    - name: Run SSH command
+      uses: garygrossgarten/github-action-ssh@v0.3.0
+      with:
+        command: sudo service colind-api restart
+        host: ${{ secrets.remoteHost }}
+        username: ${{ secrets.remoteUser }}
+        privateKey: ${{ secrets.sshPrivateKey }}
