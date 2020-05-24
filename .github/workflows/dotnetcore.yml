@@ -40,5 +40,6 @@ jobs:
         username: ${{ secrets.remoteUser }}
         server: ${{ secrets.remoteHost }}
         ssh_private_key: ${{ secrets.sshPrivateKey }}
-        remote_path: '/home/Projects/Colind.API'
+        local_path: './Colind.API/bin/'
+        remote_path: ${{ secrets.target }}
         args: -o ConnectTimeout=5
