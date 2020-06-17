@@ -2,6 +2,7 @@
 using Colind.API.DtoModels;
 using Colind.API.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Colind.API.Controllers
 {
@@ -10,15 +11,18 @@ namespace Colind.API.Controllers
     public class ColindController: ControllerBase
     {
         private readonly IColindService colindService;
+        private readonly ILogger logger;
 
-        public ColindController(IColindService colindService)
+        public ColindController(IColindService colindService, ILogger<ColindController> logger)
         {
             this.colindService = colindService;
+            this.logger = logger;
         }
 
         [HttpGet]
-        public IEnumerable<ColindDto> GetCollinds()
+        public IEnumerable<ColindDto> GetColinds()
         {
+            logger.LogInformation("Getting Colinds list");
             return colindService.GetColinds();
         }
     }
