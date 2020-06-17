@@ -20,6 +20,7 @@ namespace Colind.API.Mappers
             }
             return new ColindDto
             {
+                Id = colindEntity.Id,
                 Title = colindEntity.Title,
                 Text = colindEntity.Text,
                 Tags = tags,
